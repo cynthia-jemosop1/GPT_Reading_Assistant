@@ -119,7 +119,7 @@ def main():
                 with gr.Column():
                     summary_btn = gr.Button("📝Summarize")
                 with gr.Column():
-                    summary_output = gr.outputs.Textbox(label="Summary").style(height="80%")
+                    summary_output = gr.Textbox(label="Summary").style(height="80%")
             with gr.Row():
                 chunks_summary_output = gr.HTML(
                     label="Paragraphs and Summaries", elem_classes='output', elem_id='chunks_summary_output',
@@ -137,7 +137,7 @@ def main():
                     ask_btn = gr.Button("🤔Ask")
             with gr.Row():
                 with gr.Column():
-                    ask_output = gr.outputs.Textbox(label="Answer")
+                    ask_output = gr.Textbox(label="Answer")
             with gr.Row():
                 chunks_ask_output = gr.HTML(
                     label="Source Documents to Answer", 
