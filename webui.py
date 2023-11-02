@@ -109,10 +109,10 @@ def main():
     with gr.Blocks(css=customCSS) as demo:
         with gr.Row():
             with gr.Column():
-                file_input = gr.inputs.File(label="Upload Document")
+                file_input = gr.File(label="Upload Document")
 
             with gr.Column():
-                text_input = gr.inputs.Textbox(label="Or Paste Text", lines=10)
+                text_input = gr.Textbox(label="Or Paste Text", lines=10)
            
         with gr.Tab(label="Summarize"):
             with gr.Row(scale=1):
@@ -128,7 +128,7 @@ def main():
         with gr.Tab(label="Ask"):
             with gr.Row(scale=1):
                 with gr.Column():
-                    ask_input = gr.inputs.Textbox(
+                    ask_input = gr.Textbox(
                         label="Ask a question",
                         # default="作者如何评价这篇小说？"
                         )
@@ -194,9 +194,9 @@ def main():
 
         # templates = {map_prompt_template, combine_prompt_template, refine_initial_prompt_template, refine_prompt_template, translate_prompt_template, query_prompt_template}
 
-        # form = gr.inputs.Form([
-        #     gr.inputs.Textbox(label="Name"),
-        #     gr.inputs.Slider(label="Age", minimum=0, maximum=120)
+        # form = gr.Form([
+        #     gr.Textbox(label="Name"),
+        #     gr.Slider(label="Age", minimum=0, maximum=120)
         # ])
         # templates = gr.State({
         #     'map_prompt_template': map_prompt_template,
