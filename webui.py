@@ -7,6 +7,7 @@ from functools import partial
 from model import DocumentReader
 from utils import * 
 from prompts import * 
+
 ###
 
 templates = {       # Global variable to store the templates
@@ -119,7 +120,7 @@ def main():
                 with gr.Column():
                     summary_btn = gr.Button("📝Summarize")
                 with gr.Column():
-                    summary_output = gr.Textbox(label="Summary").style(height="80%")
+                    summary_output = gr.Textbox(label="Summary", elem_id="summarize_textbox")
             with gr.Row():
                 chunks_summary_output = gr.HTML(
                     label="Paragraphs and Summaries", elem_classes='output', elem_id='chunks_summary_output',

@@ -3,3 +3,7 @@
     overflow-y:auto;
     word-wrap: break-word;
 }
+
+.summarize_textbox{
+    height: 80%;
+}
