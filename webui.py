@@ -115,18 +115,18 @@ def main():
                 text_input = gr.Textbox(label="Or Paste Text", lines=10)
            
         with gr.Tab(label="Summarize"):
-            with gr.Row(scale=1):
+            with gr.Row():
                 with gr.Column():
                     summary_btn = gr.Button("📝Summarize")
                 with gr.Column():
                     summary_output = gr.outputs.Textbox(label="Summary").style(height="80%")
-            with gr.Row(scale=5):
+            with gr.Row():
                 chunks_summary_output = gr.HTML(
                     label="Paragraphs and Summaries", elem_classes='output', elem_id='chunks_summary_output',
                     )
         
         with gr.Tab(label="Ask"):
-            with gr.Row(scale=1):
+            with gr.Row():
                 with gr.Column():
                     ask_input = gr.Textbox(
                         label="Ask a question",
@@ -135,10 +135,10 @@ def main():
 
                 with gr.Column():
                     ask_btn = gr.Button("🤔Ask")
-            with gr.Row(scale=1):
+            with gr.Row():
                 with gr.Column():
                     ask_output = gr.outputs.Textbox(label="Answer")
-            with gr.Row(scale=5):
+            with gr.Row():
                 chunks_ask_output = gr.HTML(
                     label="Source Documents to Answer", 
                     elem_classes='output', elem_id='ask_output',
