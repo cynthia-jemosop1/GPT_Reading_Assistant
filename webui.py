@@ -149,7 +149,7 @@ def main():
         # templates = gr.State({})
         
         with gr.Tab(label="Options"):
-            with gr.Row(label="Model Options"):
+            with gr.Row(): #label="Model Options"
                 with gr.Column():
                     chunk_size = gr.Slider(
                         label="Chunk Size",
@@ -162,7 +162,7 @@ def main():
                         value=0.0, interactive=True,
                         )
                     
-            with gr.Row(label="Summarization Options"):
+            with gr.Row(): #label="Summarization Options"
                 with gr.Row():
                     summary_option = gr.Radio(
                         label="Summary Option",
@@ -174,24 +174,24 @@ def main():
                     
                     with gr.Tab(label="Map-Reduce Options") as map_reduce_tab:
                         with gr.Column():
-                            map_prompt_template = gr.Textbox(label="Map Prompt Template", value=MAP_PROMPT_TEMPLATE, lines=5, interactive=True, on_change=lambda value: update_prompt_templates("map_prompt_template", value))
+                            map_prompt_template = gr.Textbox(label="Map Prompt Template", value=MAP_PROMPT_TEMPLATE, lines=5, interactive=True, fn=lambda value: update_prompt_templates("map_prompt_template", value))
                             map_prompt_template.change(update_prompt_templates, map_prompt_template)
                         with gr.Column():
-                            combine_prompt_template = gr.Textbox(label="Combine Prompt Template", value=COMBINE_PROMPT_TEMPLATE, lines=5, interactive=True, on_change=lambda value: update_prompt_templates("combine_prompt_template", value))
+                            combine_prompt_template = gr.Textbox(label="Combine Prompt Template", value=COMBINE_PROMPT_TEMPLATE, lines=5, interactive=True, fn=lambda value: update_prompt_templates("combine_prompt_template", value))
                     with gr.Tab(label="Refine Options") as refine_tab:
                         with gr.Column():
-                            refine_initial_prompt_template = gr.Textbox(label="Initial Prompt Template", value=PROPOSAL_REFINE_INITIAL_TEMPLATE, lines=5, interactive=True, on_change=lambda value: update_prompt_templates("refine_initial_prompt_template", value))
+                            refine_initial_prompt_template = gr.Textbox(label="Initial Prompt Template", value=PROPOSAL_REFINE_INITIAL_TEMPLATE, lines=5, interactive=True, fn=lambda value: update_prompt_templates("refine_initial_prompt_template", value))
                         with gr.Column():
-                            refine_prompt_template = gr.Textbox(label="Refine Prompt Template", value=PROPOSAL_REFINE_TEMPLATE, lines=5, interactive=True, on_change=lambda value: update_prompt_templates("refine_prompt_template", value))
+                            refine_prompt_template = gr.Textbox(label="Refine Prompt Template", value=PROPOSAL_REFINE_TEMPLATE, lines=5, interactive=True, fn=lambda value: update_prompt_templates("refine_prompt_template", value))
 
                     with gr.Tab(label="Trasnlation Options"):
                         with gr.Column():
-                            translate_prompt_template = gr.Textbox(label="Translate Prompt Template", value=TRANSLATE_PROMPT_TEMPLATE, lines=5, interactive=True, on_change=lambda value: update_prompt_templates("translate_prompt_template", value))
+                            translate_prompt_template = gr.Textbox(label="Translate Prompt Template", value=TRANSLATE_PROMPT_TEMPLATE, lines=5, interactive=True, fn=lambda value: update_prompt_templates("translate_prompt_template", value))
 
 
                     with gr.Tab(label="Question Answering Options"):
                         with gr.Column():
-                            query_prompt_template = gr.Textbox(label="Query Prompt Template", value=QUERY_PROMPT_TEMPLATE, lines=5, interactive=True, on_change=lambda value: update_prompt_templates("query_prompt_template", value))  
+                            query_prompt_template = gr.Textbox(label="Query Prompt Template", value=QUERY_PROMPT_TEMPLATE, lines=5, interactive=True, fn=lambda value: update_prompt_templates("query_prompt_template", value))  
 
         # templates = {map_prompt_template, combine_prompt_template, refine_initial_prompt_template, refine_prompt_template, translate_prompt_template, query_prompt_template}
 
