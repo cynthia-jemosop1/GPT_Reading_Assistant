@@ -5,7 +5,7 @@ import mistune
 import bleach
 import html
 import re
-from mistune.renderers import HTMLRenderer
+from mistune import HTMLRenderer
 
 # * Set up the port
 def find_free_port():
